@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Neeraj Manikkath | Portfolio</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      position: relative;
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    
+    .navbar-nav .nav-link.active {
+      font-weight: bold;
+      text-decoration: underline;
+    }
+    .navbar-nav .nav-link {
+  color: rgb(0, 0, 0) !important;
+  text-decoration: none !important;  /* removes underline */
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ffc107 !important;  /* golden hover color */
+  text-decoration: none !important;  /* still no underline on hover */
+}
+
+.navbar-nav .nav-link.active {
+  color: #043e29 !important;  /* highlight active link */
+  text-decoration: none !important;
+  font-size: 17px;
+}
+
+
+    /* Sections */
+    section {
+      padding: 80px 0;
+      min-height: 100vh;
+    }
+
+    #home {
+      background: linear-gradient(to right, #8108b9, #a600d8);
+      color: white;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    #home h1 {
+      font-size: 3rem;
+      font-weight: 700;
+    }
+
+    #about img {
+      width: 280px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+    }
+
+    /* #skills .progress {
+      height: 20px;
+      border-radius: 10px;
+    } */
+
+    footer {
+      background: #0d6efd;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+
+    .project-card {
+      transition: transform 0.3s ease;
+    }
+    .project-card:hover {
+      transform: scale(1.05);
+    }
+     .donut {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      margin: auto;
+    }
+
+    .donut svg {
+      transform: rotate(-90deg);
+      width: 200px;
+      height: 200px;
+    }
+
+    .donut circle {
+      fill: none;
+      stroke-width: 15;
+      stroke-linecap:round;
+    }
+
+    .donut .bg {
+      stroke: #b999ca;
+    }
+
+    .donut .progress {
+      stroke: #79077f; /* teal accent */
+      stroke-dasharray: 314;
+      stroke-dashoffset: 314;
+      transition: stroke-dashoffset 1.5s ease, stroke 0.5s ease;
+    }
+
+    .donut .number {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-weight: bold;
+      font-size: 18px;
+      color: #333;
+    }
+
+    .donut.animate .progress {
+      stroke-dashoffset: calc(314 - (314 * var(--percent) / 100));
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 768px) {
+      .donut {
+        width: 120px;
+        height: 120px;
+      }
+      .donut svg {
+        width: 120px;
+        height: 120px;
+      }
+    }
+  </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="70" tabindex="0">
+
+  <!-- Navbar -->
+  <nav id="navbar" class="navbar navbar-expand-lg fixed-top ">
+    <div class="container">
+      <a class="navbar-brand text-white fw-bold" href="#home">Thennel K Ajith</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#home">Me</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Home -->
+  <!-- Home Section -->
+<section id="home" class="py-5 text-light" style="min-height: 100vh; display: flex; align-items: center;">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Left Side: Photo -->
+      <div class="col-md-5 text-center mb-4 mb-md-0">
+        <img src="t2.jpg" alt="Thennel K Ajith" class="img-fluid rounded-5 shadow-lg">
+      </div>
+
+      <!-- Right Side: Text -->
+      <div class="col-md-7 text-center text-md-start position-relative">
+        <h1 class="fw-bold mb-3">Hello, I'm <span style="color:#a7ffeb;">Thennel K Ajith</span></h1>
+        <p class="lead mb-4">Data Analyst & Trainer at Techolas Technologies</p>
+        <a href="#projects" class="btn btn-light btn-lg mt-2 shadow-sm">View My Work</a>
+
+        <!-- Social Icons (Vertical on Right Side) -->
+        <div class="social-icons-vertical">
+          <a href="https://github.com/Thennel" target="_blank" class="github"><i class="bi bi-github"></i></a>
+          <a href="https://www.linkedin.com/in/thennel-k-ajith-a42483284" target="_blank" class="linkedin"><i class="bi bi-linkedin"></i></a>
+          <a href="https://www.instagram.com/__thennel_k.ajith__?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="instagram"><i class="bi bi-instagram"></i></a>
+          <a href="https://wa.me/919876543210" target="_blank" class="whatsapp"><i class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    /* Social Icon Vertical Bar */
+    .social-icons-vertical {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .social-icons-vertical a {
+      font-size: 1.8rem;
+      color: #ffffffcc;
+      transition: all 0.3s ease;
+    }
+
+    .social-icons-vertical a:hover {
+      transform: translateX(-5px);
+      color: #a7ffeb;
+    }
+
+    /* Optional colored accents for each icon */
+    .social-icons-vertical .github:hover { color: #000000; }
+    .social-icons-vertical .linkedin:hover { color: #000000; }
+    .social-icons-vertical .instagram:hover { color: #000000; }
+    .social-icons-vertical .whatsapp:hover { color: #000000; }
+
+    @media (max-width: 768px) {
+      .social-icons-vertical {
+        position: static;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 20px;
+        transform: none;
+      }
+    }
+  </style>
+</section>
+
+
+  <!-- About -->
+  <section id="about">
+    <div class="container text-center">
+      
+      <h2 class="fw-bold mb-5 ">About Me</h2>
+      <div class="row">
+        <div class="col-1"></div>
+        <div class="col-5">
+            <h5 class="mt-5">
+                Data Analyst | Business Analyst| Analytical profession with 2+ year of experience in data and business analysis,
+                training, and project work. Skilled in Python, SQL, R, Tableau, Power BI,Eviews, and Excel for data visualization
+                and predictive modeling. Proficient in SDLC models, BRD, UML, Jira, and strategic tools like SWOT and PEST
+                analysis. Experienced in delivering insights through dashboards and presentations to support data-driven
+                decisions.
+            </h5>
+        </div>
+        <div class="col">
+            <img src="thennel.jpg" alt="">
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <hr>
+
+
+
+
+  <!-- Skills -->
+  <section id="skills" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center fw-bold mb-5">My Skills</h2>
+    <div class="row justify-content-center text-center g-4">
+      
+      <!-- Example Donut Item -->
+      <div class="col-md-3 col-sm-6">
+        <div class="donut" data-percentage="90">
+          <svg viewBox="0 0 120 120">
+            <circle class="bg" cx="60" cy="60" r="50"></circle>
+            <circle class="progress" cx="60" cy="60" r="50"></circle>
+          </svg>
+          <div class="number">96%</div>
+        </div>
+        <h6 class="mt-3 fw-semibold">Tableau</h6>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <div class="donut" data-percentage="85">
+          <svg viewBox="0 0 120 120">
+            <circle class="bg" cx="60" cy="60" r="50"></circle>
+            <circle class="progress" cx="60" cy="60" r="50"></circle>
+          </svg>
+          <div class="number">95%</div>
+        </div>
+        <h6 class="mt-3 fw-semibold">Excel</h6>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <div class="donut" data-percentage="75">
+          <svg viewBox="0 0 120 120">
+            <circle class="bg" cx="60" cy="60" r="50"></circle>
+            <circle class="progress" cx="60" cy="60" r="50"></circle>
+          </svg>
+          <div class="number">80%</div>
+        </div>
+        <h6 class="mt-3 fw-semibold">Python</h6>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <div class="donut" data-percentage="80">
+            <svg viewBox="0 0 120 120">
+                <circle class="bg" cx="60" cy="60" r="50"></circle>
+                <circle class="progress" cx="60" cy="60" r="50"></circle>
+            </svg>
+        <div class="number">96%</div>
+        </div>
+        <h6 class="mt-3 fw-semibold">Power BI</h6>
+    </div>
+
+    <div class="col-md-3 col-sm-6">
+        <div class="donut" data-percentage="80">
+            <svg viewBox="0 0 120 120">
+                <circle class="bg" cx="60" cy="60" r="50"></circle>
+                <circle class="progress" cx="60" cy="60" r="50"></circle>
+            </svg>
+        <div class="number">96%</div>
+        </div>
+        <h6 class="mt-3 fw-semibold">Data Modeleing</h6>
+    </div>
+
+    <div class="col-md-3 col-sm-6">
+        <div class="donut" data-percentage="80">
+            <svg viewBox="0 0 120 120">
+                <circle class="bg" cx="60" cy="60" r="50"></circle>
+                <circle class="progress" cx="60" cy="60" r="50"></circle>
+            </svg>
+        <div class="number">94%</div>
+        </div>
+        <h6 class="mt-3 fw-semibold">Statistical data analysis</h6>
+    </div>
+
+    <div class="col-md-3 col-sm-6">
+        <div class="donut" data-percentage="80">
+            <svg viewBox="0 0 120 120">
+                <circle class="bg" cx="60" cy="60" r="50"></circle>
+                <circle class="progress" cx="60" cy="60" r="50"></circle>
+            </svg>
+        <div class="number">98%</div>
+        </div>
+        <h6 class="mt-3 fw-semibold">Data interpretation</h6>
+    </div>
+
+    <div class="col-md-3 col-sm-6">
+        <div class="donut" data-percentage="80">
+            <svg viewBox="0 0 120 120">
+                <circle class="bg" cx="60" cy="60" r="50"></circle>
+                <circle class="progress" cx="60" cy="60" r="50"></circle>
+            </svg>
+        <div class="number">98%</div>
+        </div>
+        <h6 class="mt-3 fw-semibold">Storytelling </h6>
+    </div>
+
+    <div class="col-md-3 col-sm-6">
+        <div class="donut" data-percentage="80">
+            <svg viewBox="0 0 120 120">
+                <circle class="bg" cx="60" cy="60" r="50"></circle>
+                <circle class="progress" cx="60" cy="60" r="50"></circle>
+            </svg>
+        <div class="number">96%</div>
+        </div>
+        <h6 class="mt-3 fw-semibold">Business intelligence</h6>
+    </div>
+
+      
+    </div>
+  </div>
+  </section>
+
+
+
+  <!-- Experience -->
+  <!-- Updated portfolio HTML with Experience section inserted -->
+<!-- Only the Experience section is added; rest of your code remains unchanged. -->
+
+<section id="experience" class="py-5">
+  <div class="container">
+    <h2 class="fw-bold text-center mb-4">Experience</h2>
+
+    <!-- Alert Styled Component 1 -->
+    <div class="alert alert-success shadow-lg border-3 border-success rounded-4 p-4 mb-4">
+      <h4 class="fw-bold mb-1">Data and Business Analyst Trainer | Project Lead</h4>
+      <p class="mb-2"><em>Techolas Technologies, Palakkad</em> <span class="float-end">Sep 2024 – Present</span></p>
+      <hr>
+      <ul class="mt-3">
+        <li>Trained professionals in data and business analysis using Python, SQL, Power BI, Excel, and Tableau.</li>
+        <li>Created BRDs, UML diagrams, and handled Jira task management.</li>
+        <li>Delivered sessions on SWOT/PEST analysis, dashboarding, and business presentation skills.</li>
+      </ul>
+    </div>
+
+    <!-- Alert Styled Component 2 -->
+    <div class="alert alert-success shadow-lg border-3 border-success rounded-4 p-4 mb-4">
+      <h4 class="fw-bold mb-1">Econometric Data Analyst Intern</h4>
+      <p class="mb-2"><em>Boomika Pala, Kottayam</em> <span class="float-end">Oct 2023 – Mar 2024</span></p>
+      <hr>
+      <ul class="mt-3">
+        <li>Developed community-driven rainfall and water-level monitoring systems.</li>
+        <li>Built real-time monitoring and alert systems for rainfall and flood prediction.</li>
+        <li>Created AI-based flood forecasting models.</li>
+        <li>Designed citizen reporting and data-sharing features to improve community engagement.</li>
+      </ul>
+    </div>
+
+    <!-- Alert Styled Component 3 -->
+    <div class="alert alert-success shadow-lg border-3 border-success rounded-4 p-4">
+      <h4 class="fw-bold mb-1">HR Data Analyst Intern</h4>
+      <p class="mb-2"><em>Psylio, Remote</em> <span class="float-end">Dec 2023 – Jan 2024</span></p>
+      <hr>
+      <ul class="mt-3">
+        <li>Analyzed HR data to support decision-making in hiring, workforce planning, and engagement.</li>
+        <li>Worked on employee performance and diversity insights for organizational improvement.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+
+
+  <!-- Education -->
+  <!-- Updated portfolio HTML with Experience section inserted -->
+<!-- Only the Experience section is added; rest of your code remains unchanged. -->
+
+<section id="education" class="py-5">
+  <div class="container">
+    <h2 class="fw-bold mb-4">Education</h2>
+
+    <!-- Alert Box 1 -->
+    <div class="alert alert-primary shadow-lg border-3 border-primary rounded-4 p-4 mb-4">
+      <div class="d-flex justify-content-between">
+        <h5 class="fw-bold mb-1">Master’s Degree: M.A Econometrics</h5>
+        <span class="fw-semibold text-muted">2022 – 2024</span>
+      </div>
+
+      <p class="fst-italic text-primary mt-1 mb-2">Mahatma Gandhi University</p>
+
+      <ul class="mb-0">
+        <li>Econometrics uses statistical & mathematical methods to test hypotheses and forecast economic trends.</li>
+        <li>Highly relevant for data-driven policy evaluation and decision-making.</li>
+      </ul>
+    </div>
+
+    <!-- Alert Box 2 -->
+    <div class="alert alert-primary shadow-lg border-3 border-primary rounded-4 p-4 mb-4">
+      <div class="d-flex justify-content-between">
+        <h5 class="fw-bold mb-1">Bachelor’s Degree: B.A Economics</h5>
+        <span class="fw-semibold text-muted">2019 – 2022</span>
+      </div>
+
+      <p class="fst-italic text-primary mt-1 mb-2">Calicut University</p>
+
+      <ul class="mb-0">
+        <li>Studied how societies allocate scarce resources to meet needs and wants.</li>
+        <li>Covered microeconomics, macroeconomics, development economics, and policy studies.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+
+
+  <!-- Projects -->
+ <section id="projects" class="py-5">
+  <div class="container">
+    <h2 class="fw-bold text-center mb-5">My Projects</h2>
+
+    <div class="row g-4">
+
+      <!-- Project Card 1 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card project-card h-100 p-3 border border-3 border-info shadow-lg rounded-4">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">USA Income Inequality Research</h5>
+            <p class="text-muted">• Tools Used: Gretl</p>
+            <p>• Analyzed income distribution trends (1980–2020) using Census & World Bank data.</p>
+            <p>• Evaluated tax & welfare policies using econometric models.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Card 2 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card project-card h-100 p-3 border border-3 border-info shadow-lg rounded-4">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Flood Forecasting – Meenachil River</h5>
+            <p class="text-muted">• Tools Used: Excel, Python</p>
+            <p>• Built real-time flood alert system using IoT & ML models.</p>
+            <p>• Developed Flood Early Warning System (MRRM).</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Card 3 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card project-card h-100 p-3 border border-3 border-info shadow-lg rounded-4">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Comparative Study – USA vs UK</h5>
+            <p class="text-muted">• Tools Used: Excel, EViews, Word, Python</p>
+            <p>• Compared 40-year trends in income inequality.</p>
+            <p>• Evaluated socio-economic impacts in both countries.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Card 4 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card project-card h-100 p-3 border border-3 border-info shadow-lg rounded-4">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Sustainable Aquaculture – Blue Economy</h5>
+            <p class="text-muted">• Tools Used: Excel (Pivot), EViews, Word, Python</p>
+            <p>• Increased aquaculture output by 30% using sustainable methods.</p>
+            <p>• Improved water efficiency by 25% with integrated farming model.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+ 
+<!-- service_y66dcdi -->
+  <section id="contact" class="py-5">
+  <div class="container">
+    <h2 class="section-title text-center">Contact</h2>
+
+    <form action="send_mail.php" method="POST" class="mx-auto" style="max-width:500px;">
+      <div class="mb-3">
+        <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+      </div>
+      <div class="mb-3">
+        <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+      </div>
+      <div class="mb-3">
+        <textarea rows="5" name="message" class="form-control" placeholder="Your Message" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-info w-100">Send Message</button>
+    </form>
+
+  </div>
+</section>
+
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Thennel K Ajith    | Designed with ❤️ using Bootstrap</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Animate donut charts when visible
+    document.addEventListener("DOMContentLoaded", () => {
+      const donuts = document.querySelectorAll(".donut");
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            const percent = el.dataset.percentage;
+            el.style.setProperty("--percent", percent);
+            el.classList.add("animate");
+          }
+        });
+      }, { threshold: 0.4 });
+      donuts.forEach(el => observer.observe(el));
+    });
+  </script>
+</body>
+</html>
